@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskViewComponent implements OnInit {
 
+  lists:any[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
