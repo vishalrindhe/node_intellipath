@@ -1,7 +1,7 @@
 <div class="centered-content">
     <div class="task-manager-container">
         <div class="sidebar">
-            <h1 class="title has-text-primary" >LISTS</h1>
+            <h1 class="title has-text-primary" >Lists</h1>
             <div class="list-menu">
                 <a href="#" class="list-menu-item is-active" *ngFor="let list of lists">
                     <p class="white-text">
@@ -13,21 +13,15 @@
             <button class="btn btn-primary btn-rounded-corners">Add List</button>
         </div>
         <div class="task-list-container">
-            <h1 class="title has-text-primary">TASKS</h1>
-            <div class="task complete">
-            <div class="task">
+            <h1 class="title has-text-primary">
+                Tasks
+            </h1>
+            <div class="task" [class.complete]="task.completed" *ngFor="let task of tasks">
                 <p class="white-text">
-                    Task 1
+                    {{task.title}}
                     <span class="pull-right task-delete btn-rounded-corners">X</span>
                 </p>
-                
-        </div> 
-
-                    
-            </div>
-          
-           
-            </div>
-            
-
-    </div>  
+            </div>        
+        </div>     
+    </div>    
+</div>  
