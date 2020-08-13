@@ -13,6 +13,7 @@ export class TaskViewComponent implements OnInit {
 
   lists: List[] = [];
   tasks: Task[] = []; 
+  listId: string;
 
   constructor(private taskService: TaskService,
               private route: ActivatedRoute,
@@ -23,10 +24,15 @@ export class TaskViewComponent implements OnInit {
       .subscribe((lists: List[]) => this.lists = lists);
   
     this.route.params.subscribe((params: Params)  => {
-      const listId = params.listId;
-      if(!listId) return;
-      this.taskService.getTasks(listId).subscribe((tasks: Task[]) => this.tasks = tasks);
+      this.listId = params.listId;
+      if(!this.listId) return;
+      this.taskService.getTasks(this.listId).subscribe((tasks: Task[]) => this.tasks = tasks);
     });
   }
+
+  onTaskClick(task: Task) {
+    this.taskService.setComplete(this.listId, task).subscribe(() => task.completed = !task.completed)
+  }
+
 }
  
