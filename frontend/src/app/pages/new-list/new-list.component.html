@@ -1,8 +1,10 @@
-<div class="centered-content">
-     <div class="modal-box form-group">
-         <h1 class="title">Create a new list</h1>
-         <input #listInput type="text" class="form-control has-backround-light" placeholder="Enter list">
-         <button class="btn btn-primary" routerLink='/'>Cancel</button>
-         <button class="btn btn-primary" (click)="addList(listInput.value)">Add</button>      
-     </div>
+<div class="centered-content ">
+    <div class="modal-box" >
+        <div class="form-group" >
+            <h1 class="title">Create a new list</h1>
+            <input #listInput type="text" style='margin-bottom:16px' class="form-control has-background-light" placeholder="Enter list">
+            <button class="btn btn-outline-light"  routerLink='/'>Cancel</button>
+            <button class="btn btn-primary" style='margin-left:16px' (click)="addList(listInput.value)">Add</button>      
+        </div>
+    </div>
 </div>
